@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        {{ custom_record.first_name}}
+        {{ custom_record.first_name}}
+        {{ custom_record.first_name}}
+        {{ custom_record.first_name}}
+        {{ custom_record.first_name}}
+        {{ custom_record.first_name}}
+        {{ custom_record.first_name}}
+        <form method="GET" action="">
+            {% csrf_token %}
+            <!-- {% if form.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                your form has errors
+                {% for field in form %}
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+                {% endfor %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %} -->
+            <!-- <button type="submit" class="btn btn-primary">Sign up</button> -->
+        </form>
+        <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+        <a href="{% url 'delete_item' custom_record.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'edit_item' custom_record.id %}" class="btn btn-secondary">Edit</a>
+    </div>
+{%  endblock %}
